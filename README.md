@@ -110,7 +110,7 @@ Displays all unconfirmed transactions currently waiting to be mined.
 
 Shows the current server node’s wallet.
 
-![Wallet](https://github.com/abishekmanoj/TXCoin/ui-images/Wallet.png)
+![Wallet](https://github.com/abishekmanoj/TXCoin/blob/main/ui-images/Wallet.png)
 
 ## Running TXCoin
 1. Install dependencies:
