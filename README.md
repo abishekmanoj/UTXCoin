@@ -1,7 +1,7 @@
-# TXCOIN
-TXCoin is a small blockchain network and cryptocurrency prototype built entirely from scratch. It includes a working blockchain, proof-of-work mining, wallet generation, digital signatures, transaction pooling, block propagation through Redis Pub/Sub, and a React-based explorer UI.
+# UTXCOIN
+UTXCoin is a small blockchain network and cryptocurrency prototype built entirely from scratch. It includes a working blockchain, proof-of-work mining, wallet generation, digital signatures, transaction pooling, block propagation through Redis Pub/Sub, and a React-based explorer UI.
 
-TXCoin runs fully locally and regenerates wallet keys on each server start. 
+UTXCoin runs fully locally and regenerates wallet keys on each server start. 
 
 ## Tech Stack
 ```
@@ -39,7 +39,7 @@ Tech Stack/
 
 ## Project Structure
 ```
-TXCoin/
+UTXCoin/
 │
 ├── app/
 │   ├── miner.js
@@ -83,36 +83,36 @@ TXCoin/
 
 
 ## The App UI
-The TXCoin UI is a lightweight React application built with Parcel and TailwindCSS. It provides a clear visual interface to explore the blockchain, inspect transactions, view wallet details, and interact with the network.  
+The UTXCoin UI is a lightweight React application built with Parcel and TailwindCSS. It provides a clear visual interface to explore the blockchain, inspect transactions, view wallet details, and interact with the network.  
 
 ### Home Page
-The landing page introduces TXCoin and provides quick navigation to all major sections.
+The landing page introduces UTXCoin and provides quick navigation to all major sections.
 
-![Home Page](https://github.com/abishekmanoj/TXCoin/blob/main/ui-images/Home.png)
+![Home Page](https://github.com/abishekmanoj/UTXCoin/blob/main/ui-images/Home.png)
 
 
 ### Blockchain explorer Page
 Displays the full blockchain in real time.
 
-![Blockchain Explorer](https://github.com/abishekmanoj/TXCoin/blob/main/ui-images/Blockchain.png)
+![Blockchain Explorer](https://github.com/abishekmanoj/UTXCoin/blob/main/ui-images/Blockchain.png)
 
 ### Blockchain Details Page
 Shows the full internal structure of a specific block.
 
-![Blockchain Details](https://github.com/abishekmanoj/TXCoin/blob/main/ui-images/BlockDetails.png)
+![Blockchain Details](https://github.com/abishekmanoj/UTXCoin/blob/main/ui-images/BlockDetails.png)
 
 ### Transaction Pool Page
 Displays all unconfirmed transactions currently waiting to be mined.
 
-![Transaction Pool](https://github.com/abishekmanoj/TXCoin/blob/main/ui-images/TXPool.png)
+![Transaction Pool](https://github.com/abishekmanoj/UTXCoin/blob/main/ui-images/TXPool.png)
 
 ### Wallet Page
 
 Shows the current server node’s wallet.
 
-![Wallet](https://github.com/abishekmanoj/TXCoin/blob/main/ui-images/Wallet.png)
+![Wallet](https://github.com/abishekmanoj/UTXCoin/blob/main/ui-images/Wallet.png)
 
-## Running TXCoin
+## Running UTXCoin
 1. Install dependencies:
 ``` npm install ```
    

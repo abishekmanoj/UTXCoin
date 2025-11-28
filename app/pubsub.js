@@ -48,7 +48,8 @@ class PubSub {
           break
 
         case CHANNELS.TRANSACTION:
-          this.pool.setTransaction(parsedMessage)
+          const transaction = Transaction.from(parsedMessage)
+          this.pool.setTransaction(transaction)
           break
 
         default:

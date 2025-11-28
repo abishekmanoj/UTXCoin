@@ -6,8 +6,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
 
         {/* LEFT — Logo */}
-        <Link to="/" className="text-2xl font-bold text-blue-400">
-          TXCoin
+        <Link to="/" className="text-3xl font-bold text-blue-400">
+          UTXCoin
         </Link>
 
         {/* RIGHT — Menu */}

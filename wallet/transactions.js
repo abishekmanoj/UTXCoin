@@ -67,6 +67,11 @@ class Transaction {
       outputMap: { [minerWallet.publicKey]: MINING_REWARD }
     })
   }
+
+  static from(data) {
+    const transaction = Object.create(Transaction.prototype);
+    return Object.assign(transaction, data);
+  }
 }
 
 module.exports = Transaction;
