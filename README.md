@@ -117,22 +117,22 @@ Shows the current server node’s wallet.
 ``` npm install ```
    
 2. Start Redis:
-   Redis is required for Pub/Sub communication.
+   Redis is required for Pub/Sub communication:
    ``` npm run start-redis ```
    
 3. Start the main node:
-   This launches the backend and the React UI.
+   This launches the backend and the React UI:
    ``` npm run dev ```
    This runs:
    Parcel in watch mode (React frontend) ;
-   Nodemon for the backend server
+   Nodemon for the backend server ;
    The app will be available at:
    ```http://localhost:8000```
    
 
 4. Start peer nodes:
-   To simulate a network
-   ```npm run dev-peer```
+   To simulate a network: 
+   ```npm run dev-peer``` 
    Each peer starts on a random port and syncs with the root node.  
 
 5. Production build:
