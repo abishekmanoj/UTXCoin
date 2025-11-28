@@ -88,22 +88,23 @@ The TXCoin UI is a lightweight React application built with Parcel and TailwindC
 ### Home Page
 The landing page introduces TXCoin and provides quick navigation to all major sections.
 
-![Home Page](https://github.com/abishekmanoj/TXCOIN/ui-images/Home.png)
+![Home Page](https://github.com/abishekmanoj/TXCoin/blob/main/ui-images/home.png)
+
 
 ### Blockchain explorer Page
 Displays the full blockchain in real time.
 
-![Blockchain Explorer](https://github.com/abishekmanoj/TXCoin/ui-images/Blockchain.png)
+![Blockchain Explorer](https://github.com/abishekmanoj/TXCoin/blob/main/ui-images/Blockchain.png)
 
 ### Blockchain Details Page
 Shows the full internal structure of a specific block.
 
-![Blockchain Details](https://github.com/abishekmanoj/TXCoin/ui-images/BlockDetails.png)
+![Blockchain Details](https://github.com/abishekmanoj/TXCoin/blob/main/ui-images/BlockDetails.png)
 
 ### Transaction Pool Page
 Displays all unconfirmed transactions currently waiting to be mined.
 
-![Transaction Pool](https://github.com/abishekmanoj/TXCoin/ui-images/TXPool.png)
+![Transaction Pool](https://github.com/abishekmanoj/TXCoin/blob/main/ui-images/TXPool.png)
 
 ### Wallet Page
 
@@ -113,7 +114,7 @@ Shows the current server node’s wallet.
 
 ## Running TXCoin
 1. Install dependencies:
-   ``` npm install ```
+``` npm install ```
    
 2. Start Redis:
    Redis is required for Pub/Sub communication.
@@ -140,10 +141,10 @@ Shows the current server node’s wallet.
    
 
 ## Notes
-   -Wallet private keys are generated in memory on server start
-   -Wallets do not persist between restarts
-   -There is no authentication layer
-   -Anyone who runs the server gets their own temporary wallet
+-Wallet private keys are generated in memory on server start
+-Wallets do not persist between restarts
+-There is no authentication layer
+-Anyone who runs the server gets their own temporary wallet
 
 ## Author
 Abishek Manoj
