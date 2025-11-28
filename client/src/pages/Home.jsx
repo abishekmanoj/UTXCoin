@@ -12,7 +12,7 @@ export default function Home() {
       <div className="relative z-10 max-w-3xl text-center">
 
         <h1 className="text-5xl md:text-6xl font-extrabold text-blue-400 drop-shadow-lg">
-          Welcome to TXCoin
+          Welcome to UTXCoin
         </h1>
 
         <p className="mt-4 text-lg md:text-xl text-gray-300 leading-relaxed">

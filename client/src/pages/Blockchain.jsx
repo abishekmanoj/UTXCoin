@@ -52,7 +52,7 @@ export default function Blockchain() {
 
   return (
     <div className="max-w-5xl mx-auto pt-8">
-      <h1 className="text-4xl font-bold text-blue-400 mb-6">TXCoin Blockchain</h1>
+      <h1 className="text-4xl font-bold text-blue-400 mb-6">UTXCoin Blockchain</h1>
 
       <div className="space-y-4">
         {currentBlocks.map((block, index) => (

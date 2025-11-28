@@ -74,7 +74,7 @@ export default function Wallet() {
 
         <p className="text-xl text-gray-300 mt-3">
           <strong>Balance:</strong>{" "}
-          <span className="text-green-400">{wallet.balance} TXC</span>
+          <span className="text-green-400">{wallet.balance} UTXC</span>
         </p>
 
         {/* QR Code */}
@@ -121,7 +121,7 @@ export default function Wallet() {
         </div>
 
         <div>
-          <label className="block text-gray-300 mb-1">Amount (TXC)</label>
+          <label className="block text-gray-300 mb-1">Amount (UTXC)</label>
           <input
             type="number"
             value={amount}

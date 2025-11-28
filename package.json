@@ -1,5 +1,5 @@
 {
-  "name": "txcoin",
+  "name": "utxcoin",
   "version": "1.0.0",
   "description": "A simple blockchain and cryptocurrency implementation from scratch",
   "type": "commonjs",

@@ -82,7 +82,7 @@ export default function BlockDetails() {
             className="bg-gray-900 border border-gray-700 p-5 rounded-lg shadow max-w-full break-words"
           >
             <h3 className="text-lg font-semibold text-blue-300">
-              TX #{i + 1}
+              UTX #{i + 1}
             </h3>
 
             {/* SENDER */}
