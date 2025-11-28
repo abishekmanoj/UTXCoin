@@ -88,7 +88,7 @@ The TXCoin UI is a lightweight React application built with Parcel and TailwindC
 ### Home Page
 The landing page introduces TXCoin and provides quick navigation to all major sections.
 
-![Home Page](https://github.com/abishekmanoj/TXCoin/blob/main/ui-images/home.png)
+![Home Page](https://github.com/abishekmanoj/TXCoin/blob/main/ui-images/Home.png)
 
 
 ### Blockchain explorer Page
@@ -124,8 +124,8 @@ Shows the current server node’s wallet.
    This launches the backend and the React UI.
    ``` npm run dev ```
    This runs:
-   -Parcel in watch mode (React frontend)
-   -Nodemon for the backend server
+   Parcel in watch mode (React frontend) ;
+   Nodemon for the backend server
    The app will be available at:
    ```http://localhost:8000```
    
@@ -141,10 +141,10 @@ Shows the current server node’s wallet.
    
 
 ## Notes
--Wallet private keys are generated in memory on server start
--Wallets do not persist between restarts
--There is no authentication layer
--Anyone who runs the server gets their own temporary wallet
++ Wallet private keys are generated in memory on server start
++ Wallets do not persist between restarts
++ There is no authentication layer
++ Anyone who runs the server gets their own temporary wallet
 
 ## Author
 Abishek Manoj
