@@ -93,23 +93,23 @@ The landing page introduces TXCoin and provides quick navigation to all major se
 ### Blockchain explorer Page
 Displays the full blockchain in real time.
 
-![Blockchain Explorer](https://github.com/abishekmanoj/TXCOIN/ui-images/Blockchain.png)
+![Blockchain Explorer](https://github.com/abishekmanoj/TXCoin/ui-images/Blockchain.png)
 
 ### Blockchain Details Page
 Shows the full internal structure of a specific block.
 
-![Blockchain Details](https://github.com/abishekmanoj/TXCOIN/ui-images/BlockDetails.png)
+![Blockchain Details](https://github.com/abishekmanoj/TXCoin/ui-images/BlockDetails.png)
 
 ### Transaction Pool Page
 Displays all unconfirmed transactions currently waiting to be mined.
 
-![Transaction Pool](https://github.com/abishekmanoj/TXCOIN/ui-images/TXPool.png)
+![Transaction Pool](https://github.com/abishekmanoj/TXCoin/ui-images/TXPool.png)
 
 ### Wallet Page
 
 Shows the current server node’s wallet.
 
-![Wallet](https://github.com/abishekmanoj/TXCOIN/ui-images/Wallet.png)
+![Wallet](https://github.com/abishekmanoj/TXCoin/ui-images/Wallet.png)
 
 ## Running TXCoin
 1. Install dependencies:
