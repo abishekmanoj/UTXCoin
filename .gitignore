@@ -1,0 +1,43 @@
+# Node modules
+node_modules/
+
+# Parcel output
+.parcel-cache/
+client/dist/
+
+# Build artifacts
+dist/
+*.log
+
+# Environment files
+.env
+.env.local
+
+# OS junk files
+.DS_Store
+Thumbs.db
+
+# Test files
+**/*.test.js
+**/*.spec.js
+tests/
+__tests__/
+
+# Coverage from Jest 
+coverage/
+
+# Debugging files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor folders
+.vscode/
+.idea/
+
+# Windows trash caching
+$RECYCLE.BIN/
+
+# Local lock files
+package-lock.json
+parcel-lock.json
