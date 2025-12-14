@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import axios from "axios";
+import { api } from "../api";
 
 export default function BlockDetails() {
   const { id } = useParams();
@@ -9,7 +9,7 @@ export default function BlockDetails() {
 
   const fetchBlock = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/blocks");
+      const res = await api.get("/api/blocks");
       const originalChain = res.data;
 
       setBlock(originalChain[id]);
@@ -82,7 +82,7 @@ export default function BlockDetails() {
             className="bg-gray-900 border border-gray-700 p-5 rounded-lg shadow max-w-full break-words"
           >
             <h3 className="text-lg font-semibold text-blue-300">
-              UTX #{i + 1}
+              TX #{i + 1}
             </h3>
 
             {/* SENDER */}

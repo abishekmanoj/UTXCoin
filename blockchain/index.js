@@ -88,7 +88,7 @@ class Blockchain {
                             return false
                         }
                         const trueBalance = Wallet.calculateBalance({
-                            chain: this.chain,
+                            chain: chain.slice(0, i),
                             address: transaction.input.address
                         })
 
@@ -97,11 +97,11 @@ class Blockchain {
                             return false
                         }
 
-                        if (transactionSet.has(transaction)) {
+                        if (transactionSet.has(transaction.id)) {
                             console.error('An identical transaction appears more than once in the block')
                             return false
                         } else {
-                            transactionSet.add(transaction)
+                            transactionSet.add(transaction.id)
                         }
                     }
                 }

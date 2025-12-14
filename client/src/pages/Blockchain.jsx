@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import { api } from "../api";
 
 export default function Blockchain() {
   const [blocks, setBlocks] = useState([]);
@@ -11,7 +11,7 @@ export default function Blockchain() {
 
   const fetchBlocks = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/blocks");
+      const response = await api.get("/api/blocks");
 
       const originalChain = response.data;  
       const reversedChain = [...originalChain].reverse(); 
@@ -22,8 +22,8 @@ export default function Blockchain() {
         return {
           ...block,
           blockNumber: correctIndex,   
-        };
-      });
+        }
+      })
 
       setBlocks(chainWithIndex);
 
@@ -35,8 +35,10 @@ export default function Blockchain() {
   };
 
   useEffect(() => {
-    fetchBlocks();
-  }, []);
+    fetchBlocks()
+    const interval = setInterval(fetchBlocks, 4000)
+    return () => clearInterval(interval)
+  }, [])
 
   if (loading) {
     return (

@@ -43,7 +43,7 @@ app.post('/api/transact', (req, res) => {
     let transaction = pool.existingTransaction({ inputAddress: wallet.publicKey })
     try {
         if(transaction){
-            transaction.update({ senderWallet: wallet, recipient, amount })
+            transaction.update({ senderWallet: wallet, recipient, amount, chain: blockchain.chain })
         } else {
             transaction = wallet.createTransaction({ recipient, amount, chain: blockchain.chain })
         }
@@ -61,6 +61,7 @@ app.get('/api/tx-pool-map', (req, res) => {
 })
 
 app.get('/api/mine-txs', (req, res) => {
+    console.log(`HIT /api/mine-txs on PORT=${PORT} wallet=${wallet.publicKey}`)
     miner.mineTransactions()
     res.redirect('/api/blocks')
 })
@@ -114,7 +115,7 @@ const syncWithRoot = () => {
 let PEER_PORT
 
 if(process.env.GENERATE_PEER_PORT === 'true'){
-    PEER_PORT = DEFAULT_PORT + Math.ceil(Math.random() * 3000)
+    PEER_PORT = DEFAULT_PORT + Math.ceil(Math.random() * 2000)
 }
 
 const PORT = PEER_PORT || DEFAULT_PORT

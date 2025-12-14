@@ -1,4 +1,5 @@
 const Transaction = require("./transactions")
+const { REWARD_INPUT } = require('../config');
 
 class Pool{
     constructor(){
@@ -23,10 +24,12 @@ class Pool{
     }
 
     validTransactions() {
-        return Object.values(this.transactionMap)
-            .filter((transaction) => {
-                return Transaction.validTransaction(transaction)
-            });
+        return Object.values(this.transactionMap).filter(transaction => {
+            if (transaction.input.address === REWARD_INPUT.address) {
+                return false
+            }
+                return Transaction.validTransaction(transaction);
+        })
     }
 
     clearBlockchainTransactions({ chain }) {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { api } from "../api";
 
 export default function Pool() {
   const [pool, setPool] = useState({});
@@ -10,7 +10,7 @@ export default function Pool() {
 
   const fetchPool = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/tx-pool-map");
+      const res = await api.get("/api/tx-pool-map");
       setPool(res.data);
     } catch (err) {
       console.error("Error fetching TX pool:", err);
@@ -21,13 +21,11 @@ export default function Pool() {
 
   useEffect(() => {
     fetchPool();
-    const interval = setInterval(fetchPool, 5000); // auto refresh
-    return () => clearInterval(interval);
   }, []);
 
   const mineTransactions = async () => {
     try {
-      await axios.get("http://localhost:8000/api/mine-txs");
+      await api.get("/api/mine-txs");
       navigate("/blocks"); 
     } catch (err) {
       console.error("Error mining transactions:", err);

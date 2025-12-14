@@ -3,16 +3,16 @@ const INITIAL_DIFFICULTY = 3
 const STARTING_BALANCE = 100
 
 const GENESIS_DATA = {
-    timestamp: Date.now(), 
+    timestamp: '01.01.2025', 
     lastHash: '---',
-    hash: 'hash-one',
+    hash: '0xHASHOFTHEGENESISBLOCKFORUTXCOINxxx',
     difficulty: INITIAL_DIFFICULTY,
     nonce: 0,
     data: []
 }
 
 const REWARD_INPUT = { 
-    address: '*coinbase-reward*'
+    address: '*Coinbase-Mining-Reward*'
 }
 
 const MINING_REWARD = 50

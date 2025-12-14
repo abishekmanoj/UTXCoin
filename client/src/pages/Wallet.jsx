@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { QRCodeCanvas } from "qrcode.react";
-
+import { api } from "../api";
 
 export default function Wallet() {
   const [wallet, setWallet] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [copied, setCopied] = useState(false);
 
   // Form state
   const [recipient, setRecipient] = useState("");
@@ -14,7 +14,7 @@ export default function Wallet() {
 
   const fetchWallet = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/wallet-info");
+      const res = await api.get("/api/wallet-info");
       setWallet(res.data);
     } catch (err) {
       console.error("Error fetching wallet info:", err);
@@ -27,12 +27,22 @@ export default function Wallet() {
     fetchWallet();
   }, []);
 
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(wallet.address);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch (err) {
+      console.error("Copy failed:", err);
+    }
+  };
+
   const handleSend = async (e) => {
     e.preventDefault();
     setMessage(null);
 
     try {
-      const res = await axios.post("http://localhost:8000/api/transact", {
+      await api.post("/api/transact", {
         recipient,
         amount: Number(amount),
       });
@@ -44,7 +54,6 @@ export default function Wallet() {
 
       setRecipient("");
       setAmount("");
-
     } catch (err) {
       setMessage({
         type: "error",
@@ -63,18 +72,41 @@ export default function Wallet() {
 
   return (
     <div className="max-w-4xl mx-auto p-6">
-      <h1 className="text-4xl font-bold text-blue-400 mb-6">Your Wallet</h1>
+      <h1 className="text-4xl font-bold text-blue-400 mb-6">
+        Your Wallet
+      </h1>
 
       {/* Wallet Info */}
       <div className="bg-gray-900 border border-gray-700 rounded-lg p-6 shadow">
-        <p className="text-xl text-gray-300">
+        <p className="text-xl text-gray-300 mb-1">
           <strong>Address:</strong>
         </p>
-        <p className="break-all text-blue-300 mb-3">{wallet.address}</p>
+
+        <div className="flex items-start gap-3 mb-2">
+          <p className="break-all text-blue-300 flex-1">
+            {wallet.address}
+          </p>
+
+          <button
+            onClick={handleCopy}
+            disabled={copied}
+            className={`px-3 py-1 text-sm rounded transition font-medium
+              ${
+                copied
+                  ? "bg-green-700 text-green-200 cursor-default"
+                  : "bg-gray-800 hover:bg-gray-700 text-gray-300"
+              }
+            `}
+          >
+            {copied ? "✓ Copied" : "Copy"}
+          </button>
+        </div>
 
         <p className="text-xl text-gray-300 mt-3">
           <strong>Balance:</strong>{" "}
-          <span className="text-green-400">{wallet.balance} UTXC</span>
+          <span className="text-green-400">
+            {wallet.balance} UTXC
+          </span>
         </p>
 
         {/* QR Code */}
@@ -84,7 +116,7 @@ export default function Wallet() {
             size={160}
             bgColor="#111827"
             fgColor="#60a5fa"
-            />
+          />
         </div>
       </div>
 
@@ -110,7 +142,9 @@ export default function Wallet() {
         className="bg-gray-900 border border-gray-700 rounded-lg p-6 space-y-4"
       >
         <div>
-          <label className="block text-gray-300 mb-1">Recipient Address</label>
+          <label className="block text-gray-300 mb-1">
+            Recipient Address
+          </label>
           <input
             type="text"
             value={recipient}
@@ -121,11 +155,13 @@ export default function Wallet() {
         </div>
 
         <div>
-          <label className="block text-gray-300 mb-1">Amount (UTXC)</label>
+          <label className="block text-gray-300 mb-1">
+            Amount (UTXC)
+          </label>
           <input
             type="number"
-            value={amount}
             min="1"
+            value={amount}
             onChange={(e) => setAmount(e.target.value)}
             required
             className="w-full p-2 rounded bg-gray-800 border border-gray-700 text-white"
