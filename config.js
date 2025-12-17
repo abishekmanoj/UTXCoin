@@ -3,7 +3,7 @@ const INITIAL_DIFFICULTY = 3
 const STARTING_BALANCE = 100
 
 const GENESIS_DATA = {
-    timestamp: '01.01.2025', 
+    timestamp: '01.12.2025', 
     lastHash: '---',
     hash: '0xHASHOFTHEGENESISBLOCKFORUTXCOINxxx',
     difficulty: INITIAL_DIFFICULTY,
