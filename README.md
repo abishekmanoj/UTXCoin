@@ -80,7 +80,8 @@ UTXCoin/
 └── README.md
 
 ```
-
+## UML Component Diagram
+![UML Component Diagram](https://github.com/abishekmanoj/UTXCoin/blob/main/ui-images/UTXCoin-UML.png)
 
 ## The App UI
 The UTXCoin UI is a lightweight React application built with Parcel and TailwindCSS. It provides a clear visual interface to explore the blockchain, inspect transactions, view wallet details, and interact with the network.  
